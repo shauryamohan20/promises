@@ -137,7 +137,14 @@
         editbtn.value = "Edit";
         deletebtn.value = "Delete";
         deletebtn.onclick = () => {
-          localStorage.removeItem(obj.u_email);
+          // console.log(obj._id);
+          axios
+            .delete(
+              `https://crudcrud.com/api/507e70beef1940e78481d37926357e91/appointmentData/${obj._id}`
+            )
+            .then()
+            .catch((err) => console.log(err));
+          // localStorage.removeItem(obj.u_email);
           parentElem.removeChild(childElem);
         };
         editbtn.onclick = () => {
